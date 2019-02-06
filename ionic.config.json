@@ -1,0 +1,7 @@
+{
+  "name": "lexium-dppa",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', loadChildren: './home/home.module#HomePageModule' },
+  { path: '', redirectTo: 'alumnos', pathMatch: 'full' },
+  { path: 'alumnos', loadChildren: './alumnos/alumnos.module#AlumnosPageModule' },
+  { path: 'resultados', loadChildren: './resultados/resultados.module#ResultadosPageModule' },
+  { path: 'resultado', loadChildren: './resultado/resultado.module#ResultadoPageModule' },
 ];
 
 @NgModule({

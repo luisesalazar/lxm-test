@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Resultado evaluación
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding id="page6">
+  <div id="resultadoEvaluaciN-container3" *ngIf="skillReport['evaluaciones']" >
+    <h3 id="resultadoEvaluaciN-heading4" style="color:#4E8EF7;">
+      DIAGNÓSTICO PPA
+    </h3>
+    <h5 id="resultadoEvaluaciN-heading6" style="color:#000000;font-weight:400;">
+      HABILIDADES INTELECTUALES
+    </h5>
+    <div id="resultadoEvaluaciN-markdown12" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">
+        Nombre:
+        <strong>
+          Alumno 1
+        </strong>
+      </p>
+      <p style="color:#000000;">
+        Grado:
+        <strong>
+          1 Primaria
+        </strong>
+      </p>
+    </div>
+    <div class="spacer" style="width:300px;height:19px;" id="resultadoEvaluaciN-spacer5"></div>
+    <ion-card id="resultadoEvaluaciN-card28">
+      <ion-list>
+        <ion-item color="none" id="resultadoEvaluaciN-list-item36">
+          5 Habilidades bajas
+          <ion-icon name="arrow-dropdown-circle" item-right></ion-icon>
+        </ion-item>
+        <ion-item color="none" id="resultadoEvaluaciN-list-item53">
+          2 Habilidades promedio
+          <ion-icon name="arrow-dropdown-circle" item-right></ion-icon>
+        </ion-item>
+        <ion-item color="positive" id="resultadoEvaluaciN-list-item52">
+          4 Habilidades altas
+          <ion-icon name="arrow-dropdown-circle" item-right></ion-icon>
+        </ion-item>
+        <div style="width:100%;height:220px;margin:0px 0px;line-height:250px;background-color:#e8ebef;text-align:center;">
+          <i class="icon ion-image" style="font-size:64px;color:#888;vertical-align:middle;"></i>
+        </div>
+        <ion-item id="resultadoEvaluaciN-list-item-container16">
+          <div id="resultadoEvaluaciN-markdown23" class="show-list-numbers-and-dots">
+            <p style="margin-top:0px;color:#000000;">
+              Clasificación {{ skillReport['evaluaciones']['SOI-E']['habilidades']['cfc'].valor }}
+            </p>
+            <p style="color:#000000;">
+              Progresión Numérica
+            </p>
+            <p style="color:#000000;">
+              Discriminasión
+            </p>
+            <p style="color:#000000;">
+              Juicio de conceptos
+            </p>
+          </div>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DppaService } from '../dppa.service';
 import { Reports } from '../models/reports.model';
+import { SoieReport } from '../models/soie.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-resultado',
@@ -8,15 +10,26 @@ import { Reports } from '../models/reports.model';
   styleUrls: ['./resultado.page.scss'],
 })
 export class ResultadoPage implements OnInit {
-  skillReport: object;
+  reports: Reports;
+  soieReport: SoieReport;
+  eval_id: string;
+  lexium_id: string;
 
-  constructor(private dppaService: DppaService) { }
+  constructor(private dppaService: DppaService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.getSkillResults('94062');
+    this.eval_id = this.route.snapshot.paramMap.get('eval_id');
+    this.lexium_id = this.route.snapshot.paramMap.get('lexium_id');
+    this.getSkillResults(this.lexium_id, this.eval_id);
   }
 
-  getSkillResults(lexium_id: string) {
-    this.skillReport = this.dppaService.getSkillsReport(lexium_id).subscribe((data: Reports) => this.skillReport = data);
+  getSkillResults(lexium_id: string, eval_id: string) {
+    this.dppaService.getSkillsReport(lexium_id)
+      .subscribe(
+        (data: Reports) => {
+          this.reports = data;
+          this.soieReport = this.reports.evaluaciones[eval_id];
+        }
+      );
   }
 }

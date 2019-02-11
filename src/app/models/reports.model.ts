@@ -1,4 +1,4 @@
-export interface Reports {
+export class Reports {
     evaluaciones_realizadas: string;
     evaluaciones: object;
 }

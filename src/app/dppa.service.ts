@@ -9,16 +9,33 @@ import { tap } from 'rxjs/operators';
 })
 
 export class DppaService {
-  private ROOT_URL = '';
+  private endpoints = {
+    resultado: '/api_v1/resultados/individual',
+    alumno: '/api_v1/alumno'
+  };
 
   constructor(private http: HttpClient) { }
 
+  getStudent(userId: string): Observable<Reports>  {
+    const httpOptions = {
+      headers: new HttpHeaders().append('LEXIUM-API-KEY', 'a0a175e21997eaa7dafb96981b2f605f'),
+      params: new HttpParams().set('lexium_id', userId)
+    };
+    return this.http.get<Reports>(`${this.endpoints.alumno}`, httpOptions)
+    .pipe(
+      tap(
+        data => console.log(data),
+        error => this.handleError(error)
+      )
+    );
+  }
+
   getSkillsReport(userId: string): Observable<Reports>  {
     const httpOptions = {
-      headers: new HttpHeaders().set('', ''),
-      params: new HttpParams().set('', userId)
+      headers: new HttpHeaders().append('LEXIUM-API-KEY', 'a0a175e21997eaa7dafb96981b2f605f'),
+      params: new HttpParams().set('lexium_id', userId)
     };
-    return this.http.get<Reports>(`${this.ROOT_URL}`, httpOptions)
+    return this.http.get<Reports>(`${this.endpoints.resultado}`, httpOptions)
     .pipe(
       tap(
         data => console.log(data),

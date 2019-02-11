@@ -5,7 +5,7 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content padding id="page5">
+<ion-content padding>
   <div id="evaluaciones-container2">
     <h3 id="evaluaciones-heading2" style="color:#4E8EF7;">
       Alumno 1
@@ -15,22 +15,18 @@
     </h4>
     <div class="spacer" style="width:300px;height:19px;" id="evaluaciones-spacer4"></div>
   </div>
-  <ion-list id="evaluaciones-list6">
-    <ion-item color="positive" id="evaluaciones-list-item22" href="/resultado">
-      <ion-avatar item-left>
-        <img src="assets/img/cshEQ9VaQDSa1wjk9nQg_h_intelectuales.png" />
-      </ion-avatar>
-      <h2>
-        DIAGNÓSTICO PPA
-      </h2>
-    </ion-item>
-    <ion-item color="positive" id="evaluaciones-list-item23" href="/resultado">
-      <ion-avatar item-left>
-        <img src="assets/img/8fI0uDruTPupwIvGTNOX_h_lectura.png" />
-      </ion-avatar>
-      <h2>
-        DIAGNÓSTICO PPA
-      </h2>
+  <ion-list *ngIf="reports; else loading">
+    <ion-item *ngFor="let key_eval of keys_evals" href="/resultado/{{lexium_id}}/{{key_eval}}">
+      <ion-thumbnail slot="start">
+          <ion-img src="{{reports.evaluaciones[key_eval]['logo']}}"></ion-img>
+        </ion-thumbnail>
+        <h2>
+          {{reports.evaluaciones[key_eval]['nombre'] | titlecase}}
+        </h2>
+      
     </ion-item>
   </ion-list>
-</ion-content>
+
+  <ng-template #loading>
+    <ion-progress-bar type="indeterminate"></ion-progress-bar>
+  </ng-template>

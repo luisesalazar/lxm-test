@@ -10,7 +10,7 @@
     <h3 id="resultadoEvaluaciN-heading4" style="color:#4E8EF7;">
       DIAGNÓSTICO PPA
     </h3>
-    <h5 id="resultadoEvaluaciN-heading6" style="color:#000000;font-weight:400;">
+    <h5 id="resultadoEvaluaciN-heading6" style="color:#000000;">
       {{soieReport.nombre}}
     </h5>
     <div id="resultadoEvaluaciN-markdown12" class="show-list-numbers-and-dots">
@@ -27,24 +27,32 @@
         </strong>
       </p>
     </div>
+    
     <div class="spacer" style="width:300px;height:19px;" id="resultadoEvaluaciN-spacer5"></div>
+    
     <ion-card id="resultadoEvaluaciN-card28">
       <ion-list>
-        <ion-item color="none" id="resultadoEvaluaciN-list-item36">
-          5 Habilidades bajas
+        <ion-item id="resultadoEvaluaciN-list-item36">
+          <ion-label>
+              5 Habilidades bajas
+          </ion-label>
           <ion-icon name="arrow-dropdown-circle" slot="end"></ion-icon>
         </ion-item>
-        <ion-item color="none" id="resultadoEvaluaciN-list-item53">
-          2 Habilidades promedio
+        <ion-item id="resultadoEvaluaciN-list-item53">
+            <ion-label>
+                2 Habilidades promedio
+            </ion-label>
           <ion-icon name="arrow-dropdown-circle" slot="end"></ion-icon>
         </ion-item>
-        <ion-item color="positive" id="resultadoEvaluaciN-list-item52">
-          4 Habilidades altas
+        <ion-item id="resultadoEvaluaciN-list-item52">
+            <ion-label>
+                4 Habilidades altas
+            </ion-label>
           <ion-icon name="arrow-dropdown-circle" slot="end"></ion-icon>
         </ion-item>
         <ion-item id="resultadoEvaluaciN-list-item-container16">
           <div id="resultadoEvaluaciN-markdown23" class="show-list-numbers-and-dots">
-            <p style="margin-top:0px;color:#000000;">
+            <p style="margin-top:10px;color:#000000;">
               Clasificación: {{ soieReport.habilidades.cfc.valor }}
             </p>
             <p style="color:#000000;">

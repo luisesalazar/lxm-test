@@ -10,9 +10,14 @@ import { tap } from 'rxjs/operators';
 
 export class DppaService {
   private endpoints = {
+    resultado: 'https://dppa.lexiumonline.com/api_v1/resultados/individual',
+    alumno: 'https://dppa.lexiumonline.com/api_v1/alumno'
+  };
+
+  /*private endpoints = {
     resultado: '/api_v1/resultados/individual',
     alumno: '/api_v1/alumno'
-  };
+  };*/
 
   constructor(private http: HttpClient) { }
 

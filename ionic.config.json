@@ -3,5 +3,11 @@
   "integrations": {
     "cordova": {}
   },
-  "type": "angular"
+  "type": "angular",
+  "proxies": [
+    {
+      "path": "/api_v1",
+      "proxyUrl": "https://dppa.lexiumonline.com/api_v1"
+    }
+  ]
 }

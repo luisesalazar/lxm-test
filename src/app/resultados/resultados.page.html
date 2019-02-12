@@ -13,16 +13,19 @@
     <h4 id="evaluaciones-heading3" style="color:#000000;font-weight:400;">
       1 Primaria
     </h4>
-    <div class="spacer" style="width:300px;height:19px;" id="evaluaciones-spacer4"></div>
   </div>
+
+  <div class="spacer" style="width:300px;height:19px;"></div>
+
   <ion-list *ngIf="reports; else loading">
-    <ion-item *ngFor="let key_eval of keys_evals" href="/resultado/{{lexium_id}}/{{key_eval}}">
+    <ion-item detail *ngFor="let key_eval of keys_evals" href="/resultado/{{lexium_id}}/{{key_eval}}">
       <ion-thumbnail slot="start">
-          <ion-img src="{{reports.evaluaciones[key_eval]['logo']}}"></ion-img>
-        </ion-thumbnail>
-        <h2>
-          {{reports.evaluaciones[key_eval]['nombre'] | titlecase}}
-        </h2>
+        <img src="{{reports.evaluaciones[key_eval]['logo']}}" />
+      </ion-thumbnail>
+      <ion-label text-wrap text-left>
+          <h2>{{key_eval}}</h2>
+          <p>{{reports.evaluaciones[key_eval]['nombre'] | titlecase}}</p>
+      </ion-label>
       
     </ion-item>
   </ion-list>

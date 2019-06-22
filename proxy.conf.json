@@ -1,7 +1,0 @@
-{
-    "/api_v1/*": {
-        "target": "https://dppa.lexiumonline.com",
-        "secure": false,
-        "changeOrigin": true
-    }
-}

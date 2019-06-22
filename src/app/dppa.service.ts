@@ -37,8 +37,11 @@ export class DppaService {
 
   getSkillsReport(userId: string): Observable<Reports>  {
     const httpOptions = {
-      headers: new HttpHeaders().append('LEXIUM-API-KEY', 'a0a175e21997eaa7dafb96981b2f605f'),
-      params: new HttpParams().set('lexium_id', userId)
+      headers: new HttpHeaders({
+        'LEXIUM-API-KEY': 'a0a175e21997eaa7dafb96981b2f605f',
+      }),
+      params: new HttpParams().set('lexium_id', userId),
+      withCredentials: true
     };
     return this.http.get<Reports>(`${this.endpoints.resultado}`, httpOptions)
     .pipe(
